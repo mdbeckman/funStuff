@@ -1,0 +1,52 @@
+---
+title: "R Markdown Sample"
+author: ''
+date: ''
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 4.5
+    fig_width: 6
+    keep_tex: yes
+    number_sections: no
+    toc: no
+    includes:
+      after_body: latexFragment.tex
+  html_document:
+    fig_caption: yes
+    keep_md: no
+    number_sections: no
+    toc: no
+  word_document:
+    fig_caption: yes
+    fig_height: 4.5
+    fig_width: 6
+bibliography: LearningBibTeX.bib
+---
+
+# Example Syntax
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE, fig.cap="Test Plot"}
+plot(cars, pch = 016)
+```
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Learning BibTeX
+
+Here's a citation of the article [@greenwade93], but Goossens wrote a book [-@goossens93].  If I want to cite both, I wonder what happens [@greenwade93; @goossens93].
+
+# References
+
+

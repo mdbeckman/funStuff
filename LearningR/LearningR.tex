@@ -1,0 +1,202 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Learning R},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Learning R}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Install R}\label{install-r}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  You can find the most recent version of R at
+  \url{http://www.r-project.org/}
+\item
+  The website will require you to choose a ``CRAN Mirror''. the idea is
+  to find the location geographically closest to you. Right now the
+  closest option is probably to scroll down to USA and choose the link
+  next to ``Statlib, Carnegie Mellon University, Pittsburgh, PA''
+\end{itemize}
+
+\section{Install Development
+Environment}\label{install-development-environment}
+
+The development environment is the application that you will use to
+open, edit, and execute R programs. If you already have a favorite
+development environment, you can see if it's compatible with R (many of
+them are). If you don't we recommend one called RStudio.
+
+\paragraph{Installing RStudio}\label{installing-rstudio}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  You need to have R installed first (see above)
+\item
+  RStudio can be downloaded from:
+  \url{http://www.rstudio.com/products/rstudio/download/}
+\item
+  Select the ``installer'' link that corresponds to your operating
+  system (e.g. Windows, Mac OSX). Ignore the zip/tarballs \& source code sections
+\end{itemize}
+
+\section{Tutorials}\label{tutorials}
+
+\url{https://www.datacamp.com/courses/free-introduction-to-r}
+
+DataCamp is a website that provides several courses available to learn R
+including:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Introduction to R
+\item
+  Hands-On Introduction to Statistics with R
+\item
+  Data Manipulation
+\item
+  and more.
+\end{itemize}
+
+There is a subscription option, but the ``Introduction to R'' course and
+parts of several others are available for free if you create an account
+(i.e.~provide your email address and create a password). You can use the
+tutorial even if you haven't installed R yet on your local computer.
+
+Data Camp stops you in between modules to ask if you want to pay for the
+subscription, but sometimes (like the introduction to R course) you can
+bypass the subscription and continue for free. There are other tutorials
+out there, but this one is recommended because it seems to strike a nice
+balance of simulating real programming in a user-friendly environment
+for beginners.
+
+\section{Other Resources for R Help}\label{other-resources-for-r-help}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  R help documentation
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    If you know the name of the function you're trying to use, you can
+    type something like the following into the R console to pull up the
+    associated documentation: \textbf{\texttt{help(read.csv)}}
+  \item
+    RStudio also has an embedded help window with a search bar that will
+    pull up the help documentation
+  \end{itemize}
+\item
+  Google searches that say what you are trying to do with ``R'' or ``in
+  R'' included in the search terms. Result often includes R help
+  documentation, tutorial webpages, user forums (open this link in
+  Google Chrome for an example: \url{http://bfy.tw/2be})
+\item
+  \url{http://www.statmethods.net/} - ``Quick R'' website with menus
+  that you can navigate to browse through topics like Basic Statistics,
+  Data Management, Basic Graphs, Advanced Graphs, etc. Each section
+  includes examples with working code that you can copy and paste to
+  modify for yourself.
+\item
+  \url{https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml} -
+  Google's R style guide. This document gives some pointers on how to
+  write code that other people will be able to understand.
+\item
+  \url{http://adv-r.had.co.nz/} - Website which parallels a book called
+  ``Advanced R'' by Statistics Professor and RStudio Chief Scientist
+  Hadley Wickham. Although it targets a non-beginner audience, there are
+  useful sections for beginners including the following sections:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Vocabulary - The basics
+  \item
+    Style (very similar to Google Style Guide above)
+  \end{itemize}
+\item
+  \url{https://www.coursera.org/specialization/jhudatascience/1} -
+  Coursera website. Structured online courses in topics such as R
+  programming and other useful skills. These can be taken free of
+  charge, or you can pay to earn a verified certificate upon completion.
+  Courses typically require a commitment of several hours for about 4
+  weeks.
+\end{itemize}
+
+
+
+\end{document}
